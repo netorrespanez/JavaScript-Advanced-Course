@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="buttons">
+    <button>Press 1</button>
+    <button>Press 2</button>
+    <button>Press 3</button>
+  </div>
+</body>
+
+<script>
+  const buttonContainer = document.querySelector('.buttons');
+  //console.log('buttonContainer', buttonContainer);
+
+  buttonContainer.addEventListener('click', event => {
+    console.log(event)
+  })
+</script>
+</html>

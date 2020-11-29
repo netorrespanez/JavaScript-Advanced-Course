@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="parent">
+    Lorem <strong id="child"> ipsum </strong> dolor sit amet consectetur adipisicing elit. 
+    Fugiat, quisquam! Dolorem, corrupti natus nihil, perferendis voluptates dicta soluta, 
+    quod consequuntur molestiae quis maiores doloremque cupiditate eum corporis et nostrum consectetur.
+  </p>
+</body>
+
+<script type="text/javascript">
+  /*
+   * Bubbling and capturing are just a way to define the order in wich the 
+   * the event handlers occur
+   * 
+   * How this actually works in JavaScript the way that it works in  modern browsers 
+   * is that the browser will first do something called a capture wich means that when you 
+   * click on the element it's going to ripple down, its going to say okay you click on the body, 
+   * you clicked on one (first div) you clicked on two (second div)
+   * and you clicked on three (3rd div) so it actually goes from the top down and then 
+   * it captures all of those events an then it starts at the bottom and the starts doing something called bubble.
+  */
+  const parentElement = document.getElementById("parent");
+  const childElement = document.getElementById("child");
+
+  // If u put true inside there that means to use capture
+  // parentElement.addEventListener('click', () => { console.log('I am the PARENT')}, { capture: true });
+  // once: true
+  parentElement.addEventListener('click', () => { console.log('I am the PARENT')}, {capture: false, once: true}); // Same as removeEventListener
+  // childElement.addEventListener('click', () => { console.log(this)})
+
+  childElement.addEventListener('click', () => { console.log('I am the CHILD')})
+  // I am the PARENT
+  // I am the CHILD
+
+</script>
+</html>

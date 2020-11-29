@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="parent">
+    Lorem <strong id="child"> ipsum </strong> dolor sit amet consectetur adipisicing elit. 
+    Fugiat, quisquam! Dolorem, corrupti natus nihil, perferendis voluptates dicta soluta, 
+    quod consequuntur molestiae quis maiores doloremque cupiditate eum corporis et nostrum consectetur.
+  </p>
+</body>
+
+<script type="text/javascript">
+  /*
+   * Bubbling and capturing are just a way to define the order in wich the 
+   * the event handlers occur
+  */
+  const parentElement = document.getElementById("parent");
+  const childElement = document.getElementById("child");
+
+  parentElement.addEventListener('click', () => { console.log('I am the PARENT')});
+  childElement.addEventListener('click', () => { console.log('I am the CHILD')})
+
+
+</script>
+</html>
