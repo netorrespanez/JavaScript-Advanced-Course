@@ -1,0 +1,25 @@
+<head>
+  <meta charset="UTF-8">
+  <link href="mocha.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- mocha needs this div to run -->
+  <div id="mocha"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="car.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/mocha/2.3.4/mocha.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/chai/3.4.1/chai.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.15.4/sinon.min.js"></script> 
+  <script src="test.js" defer></script>
+  <title>Mocha Unit Tests</title>
+  <script>
+    // Use mocha in Behaviour-Driven Development setup
+    mocha.setup('bdd');
+    // set chai.expect to window for easy access                                                            
+    window.expect = chai.expect;
+    window.onload = function() { 
+      // Have mocha run all tests when page loads                                                                            
+      mocha.run();
+    }
+  </script>
+</body>
