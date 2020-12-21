@@ -1,0 +1,46 @@
+{
+  "name": "chip8js",
+  "version": "1.0.4",
+  "description": "A Chip-8 emulator written in JavaScript (for Node.js and the web).",
+  "license": "MIT",
+  "author": "Tania Rascia",
+  "main": "index.js",
+  "repository": "git@github.com:taniarascia/chip8",
+  "bugs": "https://github.com/taniarascia/chip8/issues",
+  "scripts": {
+    "play:terminal": "node scripts/terminal",
+    "play:native": "node scripts/native",
+    "build:web": "browserify -t brfs scripts/browser.js > web/bundle.js",
+    "watch:web": "nodemon --ignore 'web/*' --exec npm run build:web",
+    "hexdump": "node scripts/hexdump",
+    "test": "jest",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.5",
+    "jest": "^24.9.0"
+  },
+  "keywords": [
+    "chip8",
+    "chip8-emulator",
+    "emulator",
+    "node",
+    "nodejs",
+    "javascript"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "data/*.js",
+      "classes/*.js",
+      "!**/node_modules/**"
+    ]
+  },
+  "private": false,
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "brfs": "^2.0.2",
+    "browserify": "^16.2.3",
+    "nodemon": "^1.19.0",
+    "raylib": "^0.2.0"
+  }
+}
